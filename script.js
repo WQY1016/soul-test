@@ -1,6 +1,6 @@
 const questions = [
-    "1. 上课老师讲代码知识点，你是什么状态",
-    "2. 写代码出现 bug 调试不出来，你的心态？",
+    "1. 上课老师讲代码知识点，你第一状态？",
+    "2. 写代码出现 bug 调试不出来，你心态？",
     "3. 宿舍团建聚餐你一般？",
     "4. 小组做课程设计项目分工时？",
     "5. 别人看不懂你的代码注释时？",
@@ -49,6 +49,7 @@ const students = [
     "邱锦鸿","宋家欣","汤丽平","金晓乐","王逸飞","邓希骏","汪文乐","吴天昊","廖啟建","黄金城"
 ];
 
+// 刚好44条，一一对应分数性格
 const soulInfo = [
     {code:"码圈活宝",desc:"机房永远热闹，快乐从不掉线"},
     {code:"Bug 乐子人",desc:"报错也能整活，心态永远在线"},
@@ -62,7 +63,6 @@ const soulInfo = [
     {code:"组队暖咖",desc:"不内卷不内耗，快乐一起进步"},
     {code:"网梗达人",desc:"懂所有计算机热梗，聊天不冷场"},
     {code:"码圈活宝",desc:"机房永远热闹，快乐从不掉线"},
-
     {code:"软序码友",desc:"代码干净温柔，待人温和舒服"},
     {code:"漏洞暖阳",desc:"耐心帮人排错，治愈所有烦恼"},
     {code:"兼容队友",desc:"小组合作默契，从不甩锅扯皮"},
@@ -74,7 +74,6 @@ const soulInfo = [
     {code:"缓思解题",desc:"慢慢钻研算法，从容应对难题"},
     {code:"宿舍调和",desc:"温柔化解矛盾，相处舒适自在"},
     {code:"零错行者",desc:"少烦恼少 bug，万事温柔顺遂"},
-
     {code:"静默码手",desc:"话不多，编程思路格外通透"},
     {code:"独处猎手",desc:"独自静心，悄悄解决所有 bug"},
     {code:"低调潜神",desc:"默默自学变强，从不刻意炫耀"},
@@ -86,7 +85,6 @@ const soulInfo = [
     {code:"静思程序员",desc:"不爱热闹，只专注提升自己"},
     {code:"小众逻辑鬼",desc:"想法独特，计算机天赋出众"},
     {code:"内核定心",desc:"内心稳定强大，像程序内核可靠"},
-
     {code:"冷序大神",desc:"话少高冷，代码实力碾压全场"},
     {code:"独立终端",desc:"不依附他人，独自搞定项目"},
     {code:"报错佛系",desc:"程序频繁崩溃，依旧波澜不惊"},
@@ -148,8 +146,13 @@ function renderQuestion() {
 }
 
 document.getElementById("showResultBtn").onclick = function() {
-    const total = answers.reduce((sum, val) => sum + val, 0);
-    const soulIndex = total % 44;
+    let total = 0;
+    answers.forEach(v=>total+=v);
+
+    // 修复循环BUG：0~45分 完美对应0~43序号，高分绝不绕回前面
+    let soulIndex = Math.floor(total * 44 / 45);
+    soulIndex = Math.min(soulIndex, 43);
+
     const soulPerson = students[soulIndex];
     const info = soulInfo[soulIndex];
 

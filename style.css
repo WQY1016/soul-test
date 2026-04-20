@@ -2,17 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     background: #121a2f;
     color: #f0f7ff;
-    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "Microsoft YaHei", sans-serif;
     display: flex;
     justify-content: center;
     padding: 30px 15px;
     min-height: 100vh;
-    letter-spacing: 0.5px;
 }
 
 .box {
@@ -21,10 +21,8 @@ body {
     background: #1e2742;
     padding: 40px 28px;
     border-radius: 24px;
-    box-shadow: 0 8px 30px rgba(60, 180, 255, 0.12);
 }
 
-/* 首页美化 */
 #homePage {
     text-align: center;
     padding: 50px 0;
@@ -34,14 +32,12 @@ body {
     font-size: 30px;
     margin-bottom: 18px;
     color: #86e0ff;
-    font-weight: 600;
 }
 
 .desc {
     opacity: 0.7;
     margin-bottom: 45px;
     font-size: 15px;
-    line-height: 1.7;
 }
 
 #startBtn {
@@ -51,24 +47,15 @@ body {
     border-radius: 14px;
     color: white;
     font-size: 18px;
-    font-weight: 500;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(80, 200, 255, 0.6);
-    transition: all 0.25s ease;
 }
 
-#startBtn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(80, 200, 255, 0.75);
-}
-
-/* 答题进度 */
 .progress {
     text-align: center;
     font-size: 16px;
     margin-bottom: 40px;
     color: #86e0ff;
-    font-weight: 500;
 }
 
 .question-card {
@@ -81,7 +68,6 @@ body {
 .question-title {
     font-size: 21px;
     line-height: 1.5;
-    font-weight: 500;
 }
 
 .options {
@@ -90,26 +76,15 @@ body {
     gap: 14px;
 }
 
-/* 选项美化+上浮+浅青蓝光高亮 */
 .option {
     background: #2b3758;
     padding: 17px 22px;
     border-radius: 14px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    border: 1px solid transparent;
-    font-size: 15.5px;
-}
-
-.option:hover {
-    transform: translateY(-3px);
-    background: #344268;
 }
 
 .option.selected {
-    transform: translateY(-2px);
     box-shadow: 0 0 24px 8px rgba(90, 220, 255, 0.75);
-    background: #314066;
 }
 
 #showResultBtn {
@@ -117,20 +92,13 @@ body {
     padding: 17px;
     width: 100%;
     background: linear-gradient(135deg, #54bfff, #38a8ee);
-    color: white;
     border: none;
     border-radius: 14px;
+    color: white;
     font-size: 18px;
-    font-weight: 500;
     cursor: pointer;
-    transition: 0.25s;
 }
 
-#showResultBtn:hover {
-    box-shadow: 0 0 20px rgba(80, 200, 255, 0.7);
-}
-
-/* 结果页精致排版 */
 #resultPage {
     margin-top: 20px;
     padding: 35px 25px;
@@ -142,40 +110,31 @@ body {
 #resultPage h2 {
     color: #86e0ff;
     margin-bottom: 12px;
-    font-size: 22px;
-    font-weight: 600;
 }
 
 .match-tip {
     font-size: 13px;
     color: #b8e8ff;
-    opacity: 0.8;
     margin-bottom: 10px;
 }
 
 .soul-name {
     font-size: 30px;
-    font-weight: bold;
     margin: 18px 0 12px;
-    color: #ffffff;
 }
 
 .soul-code {
     color: #86e0ff;
     font-size: 17px;
     margin-bottom: 15px;
-    font-weight: 500;
 }
 
 .soul-desc {
     line-height: 1.7;
-    opacity: 0.9;
     margin-bottom: 30px;
-    font-size: 15px;
 }
 
 #resetBtn {
-    margin-top: 10px;
     padding: 15px;
     width: 100%;
     background: linear-gradient(135deg, #48c0ff, #2aa2ee);
@@ -183,9 +142,7 @@ body {
     border-radius: 14px;
     color: white;
     font-size: 16px;
-    font-weight: 500;
     cursor: pointer;
-    box-shadow: 0 0 14px rgba(72, 192, 255, 0.55);
 }
 
 .hide {
